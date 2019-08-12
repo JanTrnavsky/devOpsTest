@@ -6,8 +6,7 @@
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
     - name: Install required system packages
-      apt: name={{ item }} state=latest update_cache=yes
-      with_items: "{{ dependecy_packages }}"
+      apt: name={{ dependecy_packages }} state=latest update_cache=yes
 
     - name: Add Docker GPG apt Key
       apt_key:
