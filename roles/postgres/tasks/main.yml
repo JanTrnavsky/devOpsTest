@@ -1,0 +1,15 @@
+# partly based on https://github.com/Yoctol/ansible-docker-postgres/blob/master/tasks/main.yml
+---
+
+- name: Deploy PG DB
+  docker_container:
+    name: postgres
+    image: postgres:11.5-alpine
+    state: started
+    restart_policy: always
+    env:
+      POSTGRES_PASSWORD: roihunter
+      POSTGRES_USER: roihunter
+      POSTGRES_DB: roihunter
+
+#TODO add volume to make data persist, expose port, add some tests (but how?), create user, 

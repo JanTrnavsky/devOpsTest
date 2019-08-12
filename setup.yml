@@ -1,0 +1,9 @@
+---
+-
+  hosts: localhost
+  become: true
+  name: Database with monitoring
+
+  roles:
+    - role: docker
+    - role: postgres
