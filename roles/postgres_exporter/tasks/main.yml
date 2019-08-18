@@ -5,4 +5,4 @@
     image: wrouesnel/postgres_exporter
     name: exporter
     env:
-      DATA_SOURCE_NAME: ""postgresql://roihunter:roihunter@postgresql:5432/postgres"
+      DATA_SOURCE_NAME: "postgresql://roihunter:roihunter@postgresql:5432/postgres"
