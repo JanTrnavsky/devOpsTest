@@ -1,0 +1,4 @@
+master_name: roihunter
+master_pwd: roihunter
+master_db: roihunter
+rwdb: read_write_user_db

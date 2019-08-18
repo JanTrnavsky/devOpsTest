@@ -8,9 +8,9 @@
     state: started
     restart_policy: always
     env:
-      POSTGRES_PASSWORD: roihunter
-      POSTGRES_USER: roihunter
-      POSTGRES_DB: roihunter
+      POSTGRES_PASSWORD: {{ master_pwd }}
+      POSTGRES_USER: {{ master_name }}
+      POSTGRES_DB: {{ master_db }}
     volumes:
       - /var/lib/docker/volumes/postgres-data/_data
     published_ports:
@@ -24,18 +24,21 @@
 - name: Create DB
   postgresql_db:
     conn_limit: 100 # limit connections to not overload server
-    name: rwdb
+    name: {{ rwdb }}
     state: present
     login_host: localhost
-    login_user: roihunter
-    login_password: roihunter
+    login_user: {{ master_name }}
+    login_password: {{ master_pwd }}
 
 # Create user https://docs.ansible.com/ansible/latest/modules/postgresql_user_module.html
 - name: Create user
   postgresql_user:
-    db: rwdb
+    db: {{ rwdb }}
     name: rwuser
     password: roihunter
+    login_host: localhost
+    login_user: {{ master_name }}
+    login_password: {{ master_pwd }}
 
 
 #TODO add some tests (but how?), create user, 
