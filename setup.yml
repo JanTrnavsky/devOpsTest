@@ -11,3 +11,4 @@
     - role: postgres
     - role: postgres_exporter
     - role: prometheus
+    - role: grafana
