@@ -1,0 +1,4 @@
+ - name: Run nginx from ansible galaxy
+   roles:
+     - role: geerlingguy.nginx
+   vars:
