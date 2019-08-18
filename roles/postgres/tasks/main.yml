@@ -39,15 +39,11 @@
     login_host: localhost
     login_user: "{{ master_name }}"
     login_password: "{{ master_pwd }}"
-    encrypted: no
 
-- name: Create table in DB
+- name: Create table in DB - test
   postgresql_query:
     db: " {{ rwdb }}"
     login_host: localhost
-    login_user: rwuser
-    login_password: test
+    login_user: "{{ master_name }}"
+    login_password: "{{ master_pwd }}"
     query: CREATE TABLE test_table (ID int, name varchar(255))
-
-
-#TODO add some tests (but how?), create user, 
