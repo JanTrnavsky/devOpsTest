@@ -10,3 +10,4 @@
     - role: docker
     - role: postgres
     - role: postgres_exporter
+    - role: prometheus

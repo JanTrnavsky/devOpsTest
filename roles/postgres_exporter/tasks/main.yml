@@ -6,3 +6,5 @@
     name: exporter
     env:
       DATA_SOURCE_NAME: "postgresql://roihunter:roihunter@postgresql:5432/postgres"
+    published_ports:
+      - 127.0.0.1:9100:9100
