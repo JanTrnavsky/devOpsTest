@@ -39,6 +39,7 @@
     login_host: localhost
     login_user: "{{ master_name }}"
     login_password: "{{ master_pwd }}"
+    encrypted: no
 
 - name: Create table in DB
   postgresql_query:
