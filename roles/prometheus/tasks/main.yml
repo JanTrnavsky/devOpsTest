@@ -1,12 +1,12 @@
 # https://github.com/AlexisLessard/docker-prometheus/blob/master/tasks/install_prometheus.yml
 
-- name: Ensure prometheus data directory owner is nobody
-  file:
-        path: "{{ prometheus_volume_source}}"
-        owner: nobody
-        group: nobody
-        mode: 0777 
-        state: directory 
+#- name: Ensure prometheus data directory owner is nobody
+#  file:
+#        path: "{{ prometheus_volume_source}}"
+#        owner: nobody
+#        group: nobody
+#        mode: 0777 
+#        state: directory 
 
 - name: Copy config file
   template:
