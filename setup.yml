@@ -5,6 +5,8 @@
   name: Database with monitoring
   vars: 
     ansible_python_interpreter: /usr/bin/python3
+  dependencies:
+    - nginxinc.nginx
 
   roles:
     - role: docker
@@ -12,3 +14,4 @@
     - role: postgres_exporter
     - role: prometheus
     - role: grafana
+    - role: nginxinc.nginx
