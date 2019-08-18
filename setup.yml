@@ -9,3 +9,4 @@
   roles:
     - role: docker
     - role: postgres
+    - role: postgres_exporter
