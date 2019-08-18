@@ -35,10 +35,18 @@
   postgresql_user:
     db: "{{ rwdb }}"
     name: rwuser
-    password: roihunter
+    password: test
     login_host: localhost
     login_user: "{{ master_name }}"
     login_password: "{{ master_pwd }}"
+
+- name: Create table in DB
+  postgresql_query:
+    db: " {{ rwdb }}"
+    login_host: localhost
+    login_user: rw_user
+    login_password: test
+    query: CREATE TABLE test_table (ID int, name varchar(255))
 
 
 #TODO add some tests (but how?), create user, 
