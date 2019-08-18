@@ -1,0 +1,14 @@
+grafana_container_name: grafana
+grafana_image: grafana/grafana
+grafana_volume_folder: /srv/grafana
+grafana_volume_storage_source: "{{grafana_volume_folder}}/storage"
+grafana_volume_storage_target: /var/lib/grafana
+grafana_volume_storage_mountinstruction: "{{ grafana_volume_storage_source }}:{{ grafana_volume_storage_target }}"
+grafana_volume_datasource_source: /srv/grafana/datasources.yml
+grafana_volume_datasource_target: /etc/grafana/provisioning/datasources/datasources.yml 
+grafana_volume_datasource_mountinstruction: "{{ grafana_volume_datasource_source}}:{{grafana_volume_datasource_target}}"
+grafana_volume_mountinstructions:
+        - "{{grafana_volume_storage_mountinstruction}}"
+        - "{{grafana_volume_datasource_mountinstruction}}"
+
+prometheus_container_name: prometheus
