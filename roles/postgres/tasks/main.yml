@@ -13,5 +13,7 @@
       POSTGRES_DB: roihunter
     volumes:
       - /var/lib/docker/volumes/postgres-data/_data
+    published_ports:
+      - 127.0.0.1:5432:5432
 
-#TODO add volume to make data persist, expose port, add some tests (but how?), create user, 
+#TODO add some tests (but how?), create user, 
