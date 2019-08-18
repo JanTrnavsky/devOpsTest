@@ -21,9 +21,16 @@
   wait_for:
     port: 5432
 
+- name: Create DB
+  postgresql_db:
+    conn_limit: 100 # limit connections to not overload server
+    name: rwdb
+    state: present
+
 # Create user https://docs.ansible.com/ansible/latest/modules/postgresql_user_module.html
 - name: Create user
   postgresql_user:
+    db: rwdb
     name: rwuser
     password: roihunter
 
