@@ -26,6 +26,9 @@
     conn_limit: 100 # limit connections to not overload server
     name: rwdb
     state: present
+    login_host: localhost
+    login_user: roihunter
+    login_password: roihunter
 
 # Create user https://docs.ansible.com/ansible/latest/modules/postgresql_user_module.html
 - name: Create user
