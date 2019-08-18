@@ -44,7 +44,7 @@
   postgresql_query:
     db: " {{ rwdb }}"
     login_host: localhost
-    login_user: rw_user
+    login_user: rwuser
     login_password: test
     query: CREATE TABLE test_table (ID int, name varchar(255))
 
