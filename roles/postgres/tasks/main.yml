@@ -16,4 +16,11 @@
     published_ports:
       - 127.0.0.1:5432:5432
 
+# Create user https://docs.ansible.com/ansible/latest/modules/postgresql_user_module.html
+ - name: Create user
+   postgresql_user:
+     name: rwuser
+     password: roihunter
+     
+
 #TODO add some tests (but how?), create user, 
