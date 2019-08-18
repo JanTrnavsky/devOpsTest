@@ -12,3 +12,9 @@ grafana_volume_mountinstructions:
         - "{{grafana_volume_datasource_mountinstruction}}"
 
 prometheus_container_name: prometheus
+
+grafana_admin_user: roihunter
+grafana_admin_password: roihunter
+grafana_environment_variables:
+  GF_SECURITY_ADMIN_USER: "{{ grafana_admin_user }}"
+  GF_SECURITY_ADMIN_PASSWORD: "{{ grafana_admin_password }}"
