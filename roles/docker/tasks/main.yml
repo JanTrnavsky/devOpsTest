@@ -24,3 +24,6 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
+    
+    - name: Install required library for postgresql_user
+      apt: name=python3-psycopg2 update_cache=yes state=latest
