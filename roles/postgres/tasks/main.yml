@@ -11,5 +11,7 @@
       POSTGRES_PASSWORD: roihunter
       POSTGRES_USER: roihunter
       POSTGRES_DB: roihunter
+    volumes:
+      - /var/lib/docker/volumes/postgres-data/_data
 
 #TODO add volume to make data persist, expose port, add some tests (but how?), create user, 
